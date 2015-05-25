@@ -1,6 +1,6 @@
 {
   "name": "win-battery-level",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Get current battery level on Windows",
   "license": "MIT",
   "repository": "kevva/win-battery-level",
