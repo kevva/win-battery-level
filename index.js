@@ -21,6 +21,6 @@ module.exports = function (cb) {
 		}
 
 		stdout = parseFloat(stdout.trim().split('\n')[1]);
-		cb(null, toDecimal(stdout > 1 ? 1 : stdout));
+		cb(null, toDecimal(stdout > 100 ? 100 : stdout));
 	});
 };
