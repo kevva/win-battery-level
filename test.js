@@ -1,7 +1,12 @@
 'use strict';
-var assert = require('assert');
+var test = require('ava');
 var winBatteryLevel = require('./');
 
-it('should ', function () {
-	assert.strictEqual(winBatteryLevel('unicorns'), 'unicorns & rainbows');
+test(function (t) {
+	t.plan(2);
+
+	winBatteryLevel(function (err, level) {
+		t.assert(!err, err);
+		t.assert(level, level);
+	});
 });
