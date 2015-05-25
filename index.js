@@ -8,7 +8,7 @@ module.exports = function (cb) {
 	}
 
 	var cmd = 'WMIC';
-	var args = ['Win32_Battery', 'Get', 'EstimatedChargeRemaining'];
+	var args = ['Path', 'Win32_Battery', 'Get', 'EstimatedChargeRemaining'];
 
 	execFile(cmd, args, function (err, stdout) {
 		if (err) {
