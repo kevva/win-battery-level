@@ -1,0 +1,32 @@
+{
+  "name": "win-battery-level",
+  "version": "1.0.0",
+  "description": "Get current battery level on Windows",
+  "license": "MIT",
+  "repository": "kevva/win-battery-level",
+  "author": {
+    "name": "Kevin Martensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "battery",
+    "level",
+    "win"
+  ],
+  "dependencies": {
+    "to-decimal": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.0.4"
+  }
+}
