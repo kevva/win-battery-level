@@ -20,6 +20,7 @@ module.exports = function (cb) {
 			cb(new Error('No battery could be found'));
 		}
 
-		cb(null, toDecimal(parseFloat(stdout.trim().split('\n')[1])));
+		stdout = parseFloat(stdout.trim().split('\n')[1]);
+		cb(null, toDecimal(stdout > 1 ? 1 : stdout));
 	});
 };
