@@ -2,29 +2,7 @@
 
 > Get current battery level on Windows
 
-
-## Install
-
-```
-$ npm install --save win-battery-level
-```
-
-
-## Usage
-
-```js
-var winBatteryLevel = require('win-battery-level');
-
-winBatteryLevel(function (err, level) {
-	console.log(level);
-	//=> 0.55
-});
-```
-
-
-## CLI
-
-See the [battery-level](https://github.com/gillstrom/battery-level#cli) CLI.
+**Deprecated in favor of [battery-level](https://github.com/gillstrom/battery-level).**
 
 
 ## License
