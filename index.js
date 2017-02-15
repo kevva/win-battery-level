@@ -1,6 +1,5 @@
 'use strict';
 var execFile = require('child_process').execFile;
-var toDecimal = require('to-decimal');
 
 module.exports = function (cb) {
 	if (process.platform !== 'win32') {
@@ -8,7 +7,7 @@ module.exports = function (cb) {
 	}
 
 	var cmd = 'WMIC';
-	var args = ['Path', 'Win32_Battery', 'Get', 'EstimatedChargeRemaining'];
+	var args = ['Path', 'Win32_Battery', 'Get', 'BatteryStatus,EstimatedChargeRemaining'];
 
 	execFile(cmd, args, function (err, stdout) {
 		if (err) {
@@ -20,7 +19,7 @@ module.exports = function (cb) {
 			cb(new Error('No battery could be found'));
 		}
 
-		stdout = parseFloat(stdout.trim().split('\n')[1]);
-		cb(null, toDecimal(stdout > 100 ? 100 : stdout));
+		stdout = stdout.trim().split('\n')[1].split(/[\s]+/);
+		cb(null, (stdout[1] > 100 ? 100 : stdout[1]/100), stdout[0]-1 ? true : false); // isCharging
 	});
 };
